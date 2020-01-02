@@ -609,8 +609,8 @@ module.exports =
 
     rootPath = path.dirname(filePath)
 
-    # Extract the file system root.
-    c_RootRoot = path.parse(filePath).root
+    # Extract the project root.
+    c_RootRoot = @resolvePath("$PROJECT_PATH", filePath)
 
     # Run the command giving the full file path and running from the file system root folder where the file being linted is located.
     # This has the advantage that:
